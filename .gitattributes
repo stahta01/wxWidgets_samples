@@ -1,0 +1,69 @@
+####
+# Declare files you want to always be converted
+# to native line endings on checkout.
+#
+*.c         text whitespace=tab-in-indent,trailing-space,tabwidth=4
+*.cpp       text whitespace=tab-in-indent,trailing-space,tabwidth=4
+*.cxx       text
+*.h         text whitespace=tab-in-indent,trailing-space,tabwidth=4
+*.hxx       text
+*.xpm       text
+
+####
+# Documentation used with Windows
+#
+/docs/changes.txt     text=auto
+/docs/licence.txt     text=auto
+/docs/readme.txt      text=auto
+
+####
+# Windows-specific files that require CRLF:
+#
+*.bat       eol=crlf
+*.rc        eol=crlf
+
+####
+# Files that can use LF:
+*.cnt       eol=lf
+*.fc        eol=lf
+*.hhc       eol=lf
+*.hhj       eol=lf
+*.hhk       eol=lf
+*.hhp       eol=lf
+*.hpj       eol=lf
+*.htm       eol=lf
+*.html      eol=lf
+*.ini       eol=lf
+*.map       eol=lf
+*.pnm       eol=lf
+*.po        eol=lf
+*.r         eol=lf
+*.tex       eol=lf
+*.txt       eol=lf
+*.xbm       eol=lf
+*.xrc       eol=lf
+*.xpm       eol=lf
+results     eol=lf
+
+####
+# Unix-specific files that require LF:
+#
+*.h.in       eol=lf
+*.m4         eol=lf
+*.sh         eol=lf
+configure.in eol=lf
+Makefile.am  eol=lf
+Makefile.in  eol=lf
+makefile.unx eol=lf
+#
+config.guess eol=lf
+config.sub   eol=lf
+configure    eol=lf
+configure.in eol=lf
+
+
+####
+#
+*.hlp       binary
+*.class     binary
+*.cur       binary
