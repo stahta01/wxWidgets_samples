@@ -1,0 +1,59 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Build related files
+Makefile.in
+makefile.bcc
+makefile.gcc
+makefile.vc
+makefile.wat
+makefile.mgl
+makefile.sl
+makefile.vms
+makefile.va
+*.bkl
+*.dsp
+*.dsw
+*.sln
+*.vcproj
+*.vcxproj
+*.pbxproj
+*.bdsproj
+*.props
+*_build_log.html
+*.depend
+*.layout
+
+# Other files to ignore by default
+*.plist
+*.mms
+*.mic
+*.unx
+*.plc
+*.bat
+*.zip
+*.exe
+*.res
+*.dmc
+*.dms
+*.pro
+*.vcp
+*.vcw
+*.b32
+*.g95
+*.wat
+*.vc
+*.icc
+*.vcxproj.filters
