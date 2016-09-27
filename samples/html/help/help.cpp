@@ -27,6 +27,11 @@
 #include "wx/filesys.h"
 #include "wx/fs_zip.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #ifndef wxHAS_IMAGES_IN_RESOURCES
     #include "../../sample.xpm"
 #endif

@@ -33,6 +33,11 @@
 #include "wx/dragimag.h"
 #endif
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #include "dragimag.h"
 
 #ifndef wxHAS_IMAGES_IN_RESOURCES

@@ -30,6 +30,11 @@
 #include "wx/dcsvg.h"
 #include "wx/vector.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #include "bitmaps/new.xpm"
 #include "bitmaps/save.xpm"
 #include "bitmaps/help.xpm"

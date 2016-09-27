@@ -49,6 +49,11 @@
 #include "wx/docview.h"
 #include "wx/docmdi.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #include "docview.h"
 #include "doc.h"
 #include "view.h"

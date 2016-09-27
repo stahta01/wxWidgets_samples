@@ -51,6 +51,11 @@
 #include "wx/imaglist.h"
 #include "wx/bmpcbox.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #include "itemcontainer.h"
 #include "widgets.h"
 

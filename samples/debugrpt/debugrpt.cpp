@@ -29,6 +29,11 @@
 #include "wx/debugrpt.h"
 #include "wx/dynlib.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #if !wxUSE_DEBUGREPORT
     #error "This sample can't be built without wxUSE_DEBUGREPORT"
 #endif // wxUSE_DEBUGREPORT

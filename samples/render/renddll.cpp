@@ -20,6 +20,11 @@
     #include "wx/dc.h"
 #endif
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 // derive from wxDelegateRendererNative and not wxRendererNative itself to be
 // able to only reimplement the methods we want to show and not all of them
 class MyDllRenderer : public wxDelegateRendererNative

@@ -51,6 +51,11 @@
 // Define this as 0 for the platforms not supporting controls in toolbars
 #define USE_CONTROLS_IN_TOOLBAR 1
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 // ----------------------------------------------------------------------------
 // resources
 // ----------------------------------------------------------------------------

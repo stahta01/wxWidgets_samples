@@ -20,6 +20,11 @@
     #include "wx/log.h"
 #endif
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #if !wxUSE_PRINTING_ARCHITECTURE
     #error "You must set wxUSE_PRINTING_ARCHITECTURE to 1 in setup.h, and recompile the library."
 #endif

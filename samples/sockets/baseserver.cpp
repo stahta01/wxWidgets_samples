@@ -25,6 +25,11 @@
 #include "wx/timer.h"
 #include "wx/thread.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 const char *GetSocketErrorMsg(int pSockError)
 {
     switch(pSockError)

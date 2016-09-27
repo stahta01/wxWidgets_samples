@@ -36,6 +36,11 @@
 #include "wx/generic/gridctrl.h"
 #include "wx/generic/grideditors.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #include "griddemo.h"
 
 #ifndef wxHAS_IMAGES_IN_RESOURCES

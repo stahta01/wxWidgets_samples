@@ -19,6 +19,11 @@
 #include "wx/wx.h"
 #endif
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 #if !wxUSE_JOYSTICK
 #   error You must set wxUSE_JOYSTICK to 1 in setup.h
 #endif

@@ -34,6 +34,11 @@
 // we need to include the headers not included from wx/wx.h explicitly anyhow
 #include "wx/vscroll.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 // ----------------------------------------------------------------------------
 // resources
 // ----------------------------------------------------------------------------

@@ -27,6 +27,11 @@
     #include "wx/wx.h"
 #endif
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 // Settings common to both executables: determines whether
 // we're using TCP/IP or real DDE.
 #include "ipcsetup.h"

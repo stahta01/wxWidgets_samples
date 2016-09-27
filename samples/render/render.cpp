@@ -41,6 +41,11 @@
 #include "wx/artprov.h"
 #include "wx/renderer.h"
 
+#include <wx/version.h>
+#if !wxCHECK_VERSION(3, 1, 0)
+    #define wxOVERRIDE
+#endif // !wxCHECK_VERSION(3, 1, 0)
+
 // ----------------------------------------------------------------------------
 // resources
 // ----------------------------------------------------------------------------
