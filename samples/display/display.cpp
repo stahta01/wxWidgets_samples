@@ -212,6 +212,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size, 
     wxMenu *menuDisplay = new wxMenu;
     menuDisplay->Append(Display_FromPoint, _("Find from &point..."));
     menuDisplay->AppendSeparator();
+#if wxCHECK_VERSION(3, 1, 0)
     wxMenuItem* const
         itemFullScreen = new wxMenuItem(menuDisplay,
                                         Display_FullScreen,
@@ -221,6 +222,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size, 
         );
     menuDisplay->Append(itemFullScreen);
     menuDisplay->AppendSeparator();
+#endif // #if wxCHECK_VERSION(3, 1, 0)
     menuDisplay->Append(Display_Quit, _("E&xit\tAlt-X"), _("Quit this program"));
 
     // the "About" item should be in the help menu
@@ -232,7 +234,9 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size, 
     menuBar->Append(menuDisplay, _("&Display"));
     menuBar->Append(helpMenu, _("&Help"));
 
+#if wxCHECK_VERSION(3, 1, 0)
     EnableFullScreenView();
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
     // ... and attach this menu bar to the frame
     SetMenuBar(menuBar);
