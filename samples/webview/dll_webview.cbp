@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="dll_webview" />
+		<Option execution_dir="." />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="win_gcc">
+				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
+				<Option object_output=".objs/$(TARGET_NAME)" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="`$(WX_CONFIG) --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="`$(WX_CONFIG) --libs std,stc,webview`" />
+				</Linker>
+				<Environment>
+					<Variable name="WX_CONFIG" value="wx-config --compiler=gcc --wxcfg=$(WXCFG)" />
+				</Environment>
+			</Target>
+			<Target title="msys2_wx30_gcc">
+				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
+				<Option object_output=".objs/$(TARGET_NAME)" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="`$(WX_CONFIG) --cflags`" />
+					<Add directory="$(TARGET_COMPILER_DIR)lib/wx/include/msw-unicode-$(WX_VERSION)" />
+					<Add directory="$(TARGET_COMPILER_DIR)include/wx-$(WX_VERSION)" />
+				</Compiler>
+				<Linker>
+					<Add library="wx_msw$(WX_SUFFIX)_webview-$(WX_VERSION).dll" />
+					<Add library="wx_msw$(WX_SUFFIX)_stc-$(WX_VERSION).dll" />
+					<Add library="wx_msw$(WX_SUFFIX)_core-$(WX_VERSION).dll" />
+					<Add library="wx_base$(WX_SUFFIX)-$(WX_VERSION).dll" />
+				</Linker>
+				<Environment>
+					<Variable name="WX_SUFFIX" value="u" />
+					<Variable name="WX_VERSION" value="3.0" />
+				</Environment>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="win_gcc;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-DWXUSINGDLL" />
+		</Compiler>
+		<Unit filename="refresh.xpm" />
+		<Unit filename="stop.xpm" />
+		<Unit filename="webview.cpp" />
+		<Unit filename="wxlogo.xpm" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
