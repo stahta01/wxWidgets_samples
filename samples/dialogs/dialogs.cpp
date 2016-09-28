@@ -57,7 +57,9 @@
 #endif // wxUSE_CHOICEDLG
 
 #include "wx/rearrangectrl.h"
+#if wxCHECK_VERSION(3, 1, 0)
 #include "wx/addremovectrl.h"
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_STARTUP_TIPS
     #include "wx/tipdlg.h"
@@ -71,7 +73,9 @@
     #include "wx/progdlg.h"
 #endif // wxUSE_PROGRESSDLG
 
+#if wxCHECK_VERSION(3, 1, 0)
 #include "wx/appprogress.h"
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_ABOUTDLG
     #include "wx/aboutdlg.h"
@@ -119,17 +123,23 @@
     #include "wx/generic/colrdlgg.h"
 #endif // USE_COLOURDLG_GENERIC
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_DIRDLG_GENERIC
     #include "wx/generic/dirdlgg.h"
 #endif // USE_DIRDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_FILEDLG_GENERIC
     #include "wx/generic/filedlgg.h"
 #endif // USE_FILEDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_FONTDLG_GENERIC
     #include "wx/generic/fontdlgg.h"
 #endif // USE_FONTDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 wxIMPLEMENT_APP(MyApp);
 
@@ -197,11 +207,13 @@ wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
     EVT_MENU(DIALOGS_FILE_SAVE,                     MyFrame::FileSave)
 #endif // wxUSE_FILEDLG
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_FILEDLG_GENERIC
     EVT_MENU(DIALOGS_FILE_OPEN_GENERIC,             MyFrame::FileOpenGeneric)
     EVT_MENU(DIALOGS_FILES_OPEN_GENERIC,            MyFrame::FilesOpenGeneric)
     EVT_MENU(DIALOGS_FILE_SAVE_GENERIC,             MyFrame::FileSaveGeneric)
 #endif // USE_FILEDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_DIRDLG
     EVT_MENU(DIALOGS_DIR_CHOOSE,                    MyFrame::DirChoose)
@@ -223,24 +235,32 @@ wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
     EVT_MENU(DIALOGS_TIP,                           MyFrame::ShowTip)
 #endif // wxUSE_STARTUP_TIPS
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_FONTDLG_GENERIC
     EVT_MENU(DIALOGS_CHOOSE_FONT_GENERIC,           MyFrame::ChooseFontGeneric)
 #endif // USE_FONTDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_DIRDLG_GENERIC
     EVT_MENU(DIALOGS_GENERIC_DIR_CHOOSE,            MyFrame::GenericDirChoose)
 #endif // wxMSW || wxMAC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_COLOURDLG_GENERIC
     EVT_MENU(DIALOGS_CHOOSE_COLOUR_GENERIC,         MyFrame::ChooseColourGeneric)
     EVT_MENU(DIALOGS_CHOOSE_COLOUR_GENERIC_ALPHA,   MyFrame::ChooseColourGeneric)
 #endif // USE_COLOURDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_PROGRESSDLG
     EVT_MENU(DIALOGS_PROGRESS,                      MyFrame::ShowProgress)
 #endif // wxUSE_PROGRESSDLG
 
+#if wxCHECK_VERSION(3, 1, 0)
     EVT_MENU(DIALOGS_APP_PROGRESS,                  MyFrame::ShowAppProgress)
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_ABOUTDLG
     EVT_MENU(DIALOGS_ABOUTDLG_SIMPLE,               MyFrame::ShowSimpleAboutDialog)
@@ -251,7 +271,9 @@ wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
 
 #if wxUSE_BUSYINFO
     EVT_MENU(DIALOGS_BUSYINFO,                      MyFrame::ShowBusyInfo)
+#if wxCHECK_VERSION(3, 1, 0)
     EVT_MENU(DIALOGS_BUSYINFO_RICH,                 MyFrame::ShowRichBusyInfo)
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 #endif // wxUSE_BUSYINFO
 
 #if wxUSE_FINDREPLDLG
@@ -718,7 +740,9 @@ MyFrame::~MyFrame()
 void MyFrame::ChooseColour(wxCommandEvent& event)
 {
     m_clrData.SetColour(m_canvas->GetBackgroundColour());
+#if wxCHECK_VERSION(3, 1, 0)
     m_clrData.SetChooseAlpha(event.GetId() == DIALOGS_CHOOSE_COLOUR_ALPHA);
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
     wxColourDialog dialog(this, &m_clrData);
     dialog.SetTitle(_("Please choose the background colour"));
@@ -750,6 +774,7 @@ void MyFrame::GetColour(wxCommandEvent& WXUNUSED(event))
 #endif // wxUSE_COLOURDLG
 
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_COLOURDLG_GENERIC
 void MyFrame::ChooseColourGeneric(wxCommandEvent& event)
 {
@@ -776,6 +801,7 @@ void MyFrame::ChooseColourGeneric(wxCommandEvent& event)
     dialog->Destroy();
 }
 #endif // USE_COLOURDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_FONTDLG
 void MyFrame::ChooseFont(wxCommandEvent& WXUNUSED(event) )
@@ -802,6 +828,7 @@ void MyFrame::ChooseFont(wxCommandEvent& WXUNUSED(event) )
 }
 #endif // wxUSE_FONTDLG
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_FONTDLG_GENERIC
 void MyFrame::ChooseFontGeneric(wxCommandEvent& WXUNUSED(event) )
 {
@@ -820,6 +847,7 @@ void MyFrame::ChooseFontGeneric(wxCommandEvent& WXUNUSED(event) )
     dialog->Destroy();
 }
 #endif // USE_FONTDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_LOG_DIALOG
 void MyFrame::LogDialog(wxCommandEvent& WXUNUSED(event))
@@ -1577,7 +1605,11 @@ void MyFrame::FileOpen2(wxCommandEvent& WXUNUSED(event) )
                                         wxFileSelectorDefaultWildcardStr,
                                         wxFileSelectorDefaultWildcardStr
                                     ),
+#if wxCHECK_VERSION(3, 1, 0)
                                     wxFD_OPEN|wxFD_CHANGE_DIR|wxFD_PREVIEW|wxFD_NO_FOLLOW,
+#else
+                                    wxFD_OPEN|wxFD_CHANGE_DIR|wxFD_PREVIEW,
+#endif // #if wxCHECK_VERSION(3, 1, 0)
                                     this
                                    );
 
@@ -1651,6 +1683,7 @@ void MyFrame::FileSave(wxCommandEvent& WXUNUSED(event) )
 }
 #endif // wxUSE_FILEDLG
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_FILEDLG_GENERIC
 void MyFrame::FileOpenGeneric(wxCommandEvent& WXUNUSED(event) )
 {
@@ -1729,6 +1762,7 @@ void MyFrame::FileSaveGeneric(wxCommandEvent& WXUNUSED(event) )
     }
 }
 #endif // USE_FILEDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_DIRDLG
 void MyFrame::DoDirChoose(int style)
@@ -1756,6 +1790,7 @@ void MyFrame::DirChooseNew(wxCommandEvent& WXUNUSED(event) )
 }
 #endif // wxUSE_DIRDLG
 
+#if wxCHECK_VERSION(3, 1, 0)
 #if USE_DIRDLG_GENERIC
 void MyFrame::GenericDirChoose(wxCommandEvent& WXUNUSED(event) )
 {
@@ -1772,6 +1807,7 @@ void MyFrame::GenericDirChoose(wxCommandEvent& WXUNUSED(event) )
     }
 }
 #endif // USE_DIRDLG_GENERIC
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if USE_MODAL_PRESENTATION
 void MyFrame::ModalDlg(wxCommandEvent& WXUNUSED(event))
@@ -2162,7 +2198,9 @@ private:
                 m_notif->SetFlags(wxICON_ERROR);
                 break;
             case Icon_Custom:
+#if wxCHECK_VERSION(3, 1, 0)
                 m_notif->SetIcon(tip_xpm);
+#endif // #if wxCHECK_VERSION(3, 1, 0)
                 break;
         }
 
@@ -2183,19 +2221,23 @@ private:
                 break;
         }
 
+#if wxCHECK_VERSION(3, 1, 0)
         for (unsigned int i = 0; i < m_actionList->GetCount(); i++)
         {
             ActionInfo* ai = reinterpret_cast<ActionInfo*>(m_actionList->GetClientObject(i));
             if ( !m_notif->AddAction(ai->id, ai->customCaption) )
                 wxLogWarning("Could not add action: %s", m_actionList->GetString(i));
         }
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
+#if wxCHECK_VERSION(3, 1, 0)
         if ( m_handleEvents->GetValue() )
         {
             m_notif->Bind(wxEVT_NOTIFICATION_MESSAGE_ACTION, &TestNotificationMessageWindow::OnNotificationAction, this);
             m_notif->Bind(wxEVT_NOTIFICATION_MESSAGE_CLICK, &TestNotificationMessageWindow::OnNotificationClicked, this);
             m_notif->Bind(wxEVT_NOTIFICATION_MESSAGE_DISMISSED, &TestNotificationMessageWindow::OnNotificationDismissed, this);
         }
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
         m_notif->Show(timeout);
 
@@ -2294,6 +2336,7 @@ private:
 
 void MyFrame::OnNotifMsg(wxCommandEvent& WXUNUSED(event))
 {
+#if wxCHECK_VERSION(3, 1, 0)
 #ifdef __WXMSW__
     // Try to enable toast notifications (available since Win8)
     if ( !wxNotificationMessage::MSWUseToasts() )
@@ -2301,6 +2344,7 @@ void MyFrame::OnNotifMsg(wxCommandEvent& WXUNUSED(event))
         wxLogDebug("Toast notifications not available.");
     }
 #endif
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
     TestNotificationMessageWindow* dlg = new TestNotificationMessageWindow(this);
     dlg->Show();
@@ -2756,6 +2800,7 @@ void MyFrame::ShowProgress( wxCommandEvent& WXUNUSED(event) )
 
 #endif // wxUSE_PROGRESSDLG
 
+#if wxCHECK_VERSION(3, 1, 0)
 void MyFrame::ShowAppProgress( wxCommandEvent& WXUNUSED(event) )
 {
     wxAppProgressIndicator progress(this);
@@ -2778,6 +2823,7 @@ void MyFrame::ShowAppProgress( wxCommandEvent& WXUNUSED(event) )
 
     wxLogStatus("Progress finished");
 }
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_ABOUTDLG
 
@@ -2906,6 +2952,7 @@ void MyFrame::ShowBusyInfo(wxCommandEvent& WXUNUSED(event))
     wxSleep(2);
 }
 
+#if wxCHECK_VERSION(3, 1, 0)
 void MyFrame::ShowRichBusyInfo(wxCommandEvent& WXUNUSED(event))
 {
     wxWindowDisabler disableAll;
@@ -2927,6 +2974,7 @@ void MyFrame::ShowRichBusyInfo(wxCommandEvent& WXUNUSED(event))
 
     wxSleep(5);
 }
+#endif // #if wxCHECK_VERSION(3, 1, 0)
 
 #endif // wxUSE_BUSYINFO
 
