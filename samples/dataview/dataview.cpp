@@ -32,7 +32,9 @@
 #include "wx/numdlg.h"
 #include "wx/spinctrl.h"
 #include "wx/imaglist.h"
-#include "wx/itemattr.h"
+#if wxCHECK_VERSION(3, 1, 0)
+    #include "wx/itemattr.h"
+#endif // wxCHECK_VERSION(3, 1, 0)
 #include "wx/notebook.h"
 
 #ifdef wxHAS_GENERIC_DATAVIEWCTRL
@@ -84,10 +86,14 @@ private:
     // event handlers
     void OnStyleChange(wxCommandEvent& event);
     void OnSetBackgroundColour(wxCommandEvent& event);
+#if wxCHECK_VERSION(3, 1, 0)
     void OnCustomHeaderAttr(wxCommandEvent& event);
+#endif // wxCHECK_VERSION(3, 1, 0)
+#if wxCHECK_VERSION(3, 1, 0)
 #ifdef wxHAS_GENERIC_DATAVIEWCTRL
     void OnCustomHeaderHeight(wxCommandEvent& event);
 #endif // wxHAS_GENERIC_DATAVIEWCTRL
+#endif // wxCHECK_VERSION(3, 1, 0)
     void OnSetForegroundColour(wxCommandEvent& event);
     void OnIncIndent(wxCommandEvent& event);
     void OnDecIndent(wxCommandEvent& event);
@@ -131,9 +137,13 @@ private:
     void OnHeaderClick( wxDataViewEvent &event );
     void OnAttrHeaderClick( wxDataViewEvent &event );
     void OnHeaderRightClick( wxDataViewEvent &event );
+#if wxCHECK_VERSION(3, 1, 0)
     void OnHeaderClickList( wxDataViewEvent &event );
+#endif // wxCHECK_VERSION(3, 1, 0)
     void OnSorted( wxDataViewEvent &event );
+#if wxCHECK_VERSION(3, 1, 0)
     void OnSortedList( wxDataViewEvent &event );
+#endif // wxCHECK_VERSION(3, 1, 0)
 
     void OnContextMenu( wxDataViewEvent &event );
 
@@ -142,7 +152,9 @@ private:
     void OnHideAttributes( wxCommandEvent &event);
     void OnShowAttributes( wxCommandEvent &event);
 
+#if wxCHECK_VERSION(3, 1, 0)
     void OnMultipleSort( wxCommandEvent &event);
+#endif // wxCHECK_VERSION(3, 1, 0)
 
 #if wxUSE_DRAG_AND_DROP
     void OnBeginDrag( wxDataViewEvent &event );
@@ -362,10 +374,14 @@ wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
 
     EVT_MENU( ID_FOREGROUND_COLOUR, MyFrame::OnSetForegroundColour )
     EVT_MENU( ID_BACKGROUND_COLOUR, MyFrame::OnSetBackgroundColour )
+#if wxCHECK_VERSION(3, 1, 0)
     EVT_MENU( ID_CUSTOM_HEADER_ATTR, MyFrame::OnCustomHeaderAttr )
+#endif // wxCHECK_VERSION(3, 1, 0)
+#if wxCHECK_VERSION(3, 1, 0)
 #ifdef wxHAS_GENERIC_DATAVIEWCTRL
     EVT_MENU( ID_CUSTOM_HEADER_HEIGHT, MyFrame::OnCustomHeaderHeight )
 #endif // wxHAS_GENERIC_DATAVIEWCTRL
+#endif // wxCHECK_VERSION(3, 1, 0)
     EVT_MENU( ID_INC_INDENT, MyFrame::OnIncIndent )
     EVT_MENU( ID_DEC_INDENT, MyFrame::OnDecIndent )
 
@@ -386,8 +402,10 @@ wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
     EVT_BUTTON( ID_ADD_MANY, MyFrame::OnAddMany)
     EVT_BUTTON( ID_HIDE_ATTRIBUTES, MyFrame::OnHideAttributes)
     EVT_BUTTON( ID_SHOW_ATTRIBUTES, MyFrame::OnShowAttributes)
+#if wxCHECK_VERSION(3, 1, 0)
     EVT_CHECKBOX( ID_MULTIPLE_SORT, MyFrame::OnMultipleSort)
-    
+#endif // wxCHECK_VERSION(3, 1, 0)
+
     // Fourth page.
     EVT_BUTTON( ID_DELETE_TREE_ITEM, MyFrame::OnDeleteTreeItem )
     EVT_BUTTON( ID_DELETE_ALL_TREE_ITEMS, MyFrame::OnDeleteAllTreeItems )
@@ -410,8 +428,12 @@ wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
     EVT_DATAVIEW_COLUMN_HEADER_CLICK(ID_MUSIC_CTRL, MyFrame::OnHeaderClick)
     EVT_DATAVIEW_COLUMN_HEADER_RIGHT_CLICK(ID_MUSIC_CTRL, MyFrame::OnHeaderRightClick)
     EVT_DATAVIEW_COLUMN_SORTED(ID_MUSIC_CTRL, MyFrame::OnSorted)
+#if wxCHECK_VERSION(3, 1, 0)
     EVT_DATAVIEW_COLUMN_SORTED(ID_ATTR_CTRL, MyFrame::OnSortedList)
+#endif // wxCHECK_VERSION(3, 1, 0)
+#if wxCHECK_VERSION(3, 1, 0)
     EVT_DATAVIEW_COLUMN_HEADER_CLICK(ID_ATTR_CTRL, MyFrame::OnHeaderClickList)
+#endif // wxCHECK_VERSION(3, 1, 0)
 
     EVT_DATAVIEW_ITEM_CONTEXT_MENU(ID_MUSIC_CTRL, MyFrame::OnContextMenu)
 
@@ -709,9 +731,11 @@ void MyFrame::BuildDataViewCtrl(wxPanel* parent, unsigned int nPanel, unsigned l
                                         MyListModel::Col_Date);
 
             wxDataViewTextRenderer* const markupRenderer = new wxDataViewTextRenderer();
+#if wxCHECK_VERSION(3, 1, 0)
 #if wxUSE_MARKUP
             markupRenderer->EnableMarkup();
 #endif // wxUSE_MARKUP
+#endif // wxCHECK_VERSION(3, 1, 0)
             m_attributes =
                 new wxDataViewColumn("attributes",
                                      markupRenderer,
@@ -819,6 +843,7 @@ void MyFrame::OnSetBackgroundColour(wxCommandEvent& WXUNUSED(event))
     }
 }
 
+#if wxCHECK_VERSION(3, 1, 0)
 void MyFrame::OnCustomHeaderAttr(wxCommandEvent& event)
 {
     wxItemAttr attr;
@@ -833,7 +858,9 @@ void MyFrame::OnCustomHeaderAttr(wxCommandEvent& event)
     if ( !dvc->SetHeaderAttr(attr) )
         wxLogMessage("Sorry, header attributes not supported on this platform");
 }
+#endif // wxCHECK_VERSION(3, 1, 0)
 
+#if wxCHECK_VERSION(3, 1, 0)
 #ifdef wxHAS_GENERIC_DATAVIEWCTRL
 void MyFrame::OnCustomHeaderHeight(wxCommandEvent& event)
 {
@@ -853,6 +880,7 @@ void MyFrame::OnCustomHeaderHeight(wxCommandEvent& event)
     dvc->Layout();
 }
 #endif // wxHAS_GENERIC_DATAVIEWCTRL
+#endif // wxCHECK_VERSION(3, 1, 0)
 
 void MyFrame::OnIncIndent(wxCommandEvent& WXUNUSED(event))
 {
@@ -1231,6 +1259,7 @@ void MyFrame::OnHeaderRightClick( wxDataViewEvent &event )
     wxLogMessage( "wxEVT_DATAVIEW_COLUMN_HEADER_RIGHT_CLICK, Column position: %d", pos );
 }
 
+#if wxCHECK_VERSION(3, 1, 0)
 void MyFrame::OnSortedList( wxDataViewEvent &/*event*/)
 {
     wxVector<wxDataViewColumn *> const columns = m_ctrl[1]->GetSortingColumns();
@@ -1249,7 +1278,9 @@ void MyFrame::OnSortedList( wxDataViewEvent &/*event*/)
                      col->IsSortOrderAscending() ? "ascending" : "descending");
     }
 }
+#endif // wxCHECK_VERSION(3, 1, 0)
 
+#if wxCHECK_VERSION(3, 1, 0)
 void MyFrame::OnHeaderClickList( wxDataViewEvent &event )
 {
     // Use control+click to toggle sorting by this column.
@@ -1258,6 +1289,7 @@ void MyFrame::OnHeaderClickList( wxDataViewEvent &event )
     else
         event.Skip();
 }
+#endif // wxCHECK_VERSION(3, 1, 0)
 
 void MyFrame::OnSorted( wxDataViewEvent &event )
 {
@@ -1351,9 +1383,11 @@ void MyFrame::OnAddTreeContainerItem(wxCommandEvent& WXUNUSED(event))
         ctrl->AppendContainer(selected, "Container", 0 );
 }
 
+#if wxCHECK_VERSION(3, 1, 0)
 void MyFrame::OnMultipleSort( wxCommandEvent &event )
 {
     if ( !m_ctrl[1]->AllowMultiColumnSort(event.IsChecked()) )
         wxLogMessage("Sorting by multiple columns not supported");
 }
+#endif // wxCHECK_VERSION(3, 1, 0)
 
