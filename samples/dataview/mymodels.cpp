@@ -436,7 +436,14 @@ void MyListModel::GetValueByRow( wxVariant &variant,
             {
                 static const char *labels[5] =
                 {
-                    "blue", "green", "red", "bold cyan", "default",
+                    // These strings will look wrong without wxUSE_MARKUP, but
+                    // it's just a sample, so we don't care.
+                    "<span color=\"#87ceeb\">light</span> and "
+                        "<span color=\"#000080\">dark</span> blue",
+                    "<big>growing green</big>",
+                    "<i>emphatic red</i>",
+                    "<b>bold cyan</b>",
+                    "<small><tt>dull default</tt></small>",
                 };
 
                 variant = labels[row % 5];
@@ -470,7 +477,8 @@ bool MyListModel::GetAttrByRow( unsigned int row, unsigned int col,
         case Col_IconText:
             if ( !(row % 2) )
                 return false;
-            attr.SetColour(*wxLIGHT_GREY);
+            attr.SetColour(*wxYELLOW);
+            attr.SetBackgroundColour(*wxLIGHT_GREY);
             break;
 
         case Col_TextWithAttr:
