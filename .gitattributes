@@ -24,6 +24,7 @@
 
 ####
 # Files that can use LF:
+*.cbp       eol=lf
 *.cnt       eol=lf
 *.fc        eol=lf
 *.hhc       eol=lf
@@ -40,6 +41,7 @@
 *.r         eol=lf
 *.tex       eol=lf
 *.txt       eol=lf
+*.workspace eol=lf
 *.xbm       eol=lf
 *.xrc       eol=lf
 *.xpm       eol=lf
