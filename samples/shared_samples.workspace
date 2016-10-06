@@ -7,7 +7,7 @@
 		<Project filename="dll/shared_sdk_exe.cbp">
 			<Depends filename="dll/shared_my_dll.cbp" />
 		</Project>
-		<Project filename="access/dll_access.cbp" />
+		<Project filename="access/shared_access.cbp" />
 		<Project filename="animate/dll_animate.cbp" />
 		<Project filename="artprov/dll_artprov.cbp" />
 		<Project filename="aui/dll_aui.cbp" />
@@ -28,6 +28,7 @@
 		<Project filename="erase/dll_erase.cbp" />
 		<Project filename="event/dll_event.cbp" />
 		<Project filename="except/dll_except.cbp" />
+		<Project filename="exec/dll_exec.cbp" />
 		<Project filename="fswatcher/dll_fswatcher.cbp" />
 		<Project filename="grid/dll_grid.cbp" />
 		<Project filename="help/dll_help.cbp" />
@@ -61,6 +62,7 @@
 		<Project filename="popup/dll_popup.cbp" />
 		<Project filename="preferences/dll_preferences.cbp" />
 		<Project filename="printing/dll_printing.cbp" />
+		<Project filename="propgrid/dll_propgrid.cbp" />
 		<Project filename="regtest/dll_regtest.cbp" />
 		<Project filename="ribbon/dll_ribbon.cbp" />
 		<Project filename="richtext/dll_richtext.cbp" />
@@ -89,23 +91,21 @@
 		<Project filename="webview/dll_webview.cbp" />
 		<Project filename="wizard/dll_wizard.cbp" />
 		<Project filename="wrapsizer/dll_wrapsizer.cbp" />
-		<Project filename="drawing/dll_drawing.cbp" />
-		<Project filename="exec/dll_exec.cbp" />
 		<Project filename="font/dll_font.cbp" />
 		<Project filename="image/dll_image.cbp" />
 		<Project filename="keyboard/dll_keyboard.cbp" />
-		<Project filename="listctrl/dll_listctrl.cbp" />
 		<Project filename="power/dll_power.cbp" />
-		<Project filename="propgrid/dll_propgrid.cbp" />
 		<Project filename="render/dll_render.cbp" />
-		<Project filename="treectrl/dll_treectrl.cbp" />
 		<Project filename="text/dll_text.cbp" />
+		<Project filename="treectrl/dll_treectrl.cbp" />
 		<Project filename="widgets/dll_widgets.cbp" />
+		<Project filename="drawing/dll_drawing.cbp" />
+		<Project filename="listctrl/dll_listctrl.cbp" />
 		<Project filename="xrc/dll_xrc.cbp" />
-		<Project filename="html/dll_html_ctrl.cbp" />
-		<Project filename="debugrpt/dll_debugrpt.cbp" />
-		<Project filename="xti/dll_xti.cbp" />
 		<Project filename="flash/dll_flash.cbp" />
 		<Project filename="mfc/dll_mfc.cbp" />
+		<Project filename="debugrpt/dll_debugrpt.cbp" />
+		<Project filename="html/dll_html_ctrl.cbp" />
+		<Project filename="xti/dll_xti.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
