@@ -62,7 +62,6 @@
 		<Project filename="popup/dll_popup.cbp" />
 		<Project filename="preferences/dll_preferences.cbp" />
 		<Project filename="printing/dll_printing.cbp" />
-		<Project filename="propgrid/shared_propgrid.cbp" />
 		<Project filename="regtest/dll_regtest.cbp" />
 		<Project filename="ribbon/dll_ribbon.cbp" />
 		<Project filename="richtext/dll_richtext.cbp" />
@@ -95,6 +94,7 @@
 		<Project filename="image/shared_image.cbp" />
 		<Project filename="keyboard/shared_keyboard.cbp" />
 		<Project filename="power/shared_power.cbp" />
+		<Project filename="propgrid/shared_propgrid.cbp" />
 		<Project filename="render/shared_render.cbp" />
 		<Project filename="text/shared_text.cbp" />
 		<Project filename="treectrl/shared_treectrl.cbp" />
