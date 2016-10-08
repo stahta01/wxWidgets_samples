@@ -29,7 +29,7 @@
 				<Option working_dir="isosurf" />
 				<Option object_output=".objs/$(TARGET_NAME)" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="msys2-gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add directory="$(TARGET_COMPILER_DIR)lib/wx/include/msw-unicode-$(WX_VERSION)" />
@@ -51,7 +51,7 @@
 				<Option working_dir="isosurf" />
 				<Option object_output=".objs/$(TARGET_NAME)" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="msys2-gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-DWXUSINGDLL" />

@@ -28,7 +28,7 @@
 				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
 				<Option object_output=".objs/$(TARGET_NAME)" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="msys2-gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="`$(WX_CONFIG) --cflags`" />
@@ -48,7 +48,7 @@
 				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
 				<Option object_output=".objs/$(TARGET_NAME)" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="msys2-gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="`$(WX_CONFIG) --cflags`" />
