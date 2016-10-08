@@ -5,7 +5,7 @@
 		<Option title="static_opengl_cube" />
 		<Option execution_dir="." />
 		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="null" />
 		<Build>
 			<Target title="win_gcc">
 				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
@@ -27,7 +27,7 @@
 				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
 				<Option object_output=".objs/$(TARGET_NAME)" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="msys2-gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option='-DWXDLLIMPEXP_GL=&quot;&quot;' />
@@ -57,7 +57,7 @@
 				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
 				<Option object_output=".objs/$(TARGET_NAME)" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="msys2-gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add directory="$(TARGET_COMPILER_DIR)lib/wx/include/msw-unicode-$(WX_VERSION)" />
@@ -85,7 +85,8 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="win_gcc;" />
+			<Add alias="All" targets="win_gcc;msys2_wx30_gcc;msys2_wx31_gcc;" />
+			<Add alias="MSys2" targets="msys2_wx30_gcc;msys2_wx31_gcc;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
