@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="dll_power" />
+		<Option title="shared_text" />
 		<Option execution_dir="." />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
@@ -31,6 +31,7 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="`$(WX_CONFIG) --cflags`" />
 					<Add directory="$(TARGET_COMPILER_DIR)lib/wx/include/msw-unicode-$(WX_VERSION)" />
 					<Add directory="$(TARGET_COMPILER_DIR)include/wx-$(WX_VERSION)" />
 				</Compiler>
@@ -50,6 +51,7 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="`$(WX_CONFIG) --cflags`" />
 					<Add directory="$(TARGET_COMPILER_DIR)lib/wx/include/msw-unicode-$(WX_VERSION)" />
 					<Add directory="$(TARGET_COMPILER_DIR)include/wx-$(WX_VERSION)" />
 				</Compiler>
@@ -69,7 +71,7 @@
 		<Compiler>
 			<Add option="-DWXUSINGDLL" />
 		</Compiler>
-		<Unit filename="power.cpp" />
+		<Unit filename="text.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

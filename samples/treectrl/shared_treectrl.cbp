@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="dll_render" />
+		<Option title="shared_treectrl" />
 		<Option execution_dir="." />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
@@ -31,6 +31,7 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="`$(WX_CONFIG) --cflags`" />
 					<Add directory="$(TARGET_COMPILER_DIR)lib/wx/include/msw-unicode-$(WX_VERSION)" />
 					<Add directory="$(TARGET_COMPILER_DIR)include/wx-$(WX_VERSION)" />
 				</Compiler>
@@ -50,6 +51,7 @@
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="`$(WX_CONFIG) --cflags`" />
 					<Add directory="$(TARGET_COMPILER_DIR)lib/wx/include/msw-unicode-$(WX_VERSION)" />
 					<Add directory="$(TARGET_COMPILER_DIR)include/wx-$(WX_VERSION)" />
 				</Compiler>
@@ -69,8 +71,20 @@
 		<Compiler>
 			<Add option="-DWXUSINGDLL" />
 		</Compiler>
-		<Unit filename="renddll.cpp" />
-		<Unit filename="render.cpp" />
+		<Unit filename="checked.xpm" />
+		<Unit filename="icon1.xpm" />
+		<Unit filename="icon2.xpm" />
+		<Unit filename="icon3.xpm" />
+		<Unit filename="icon4.xpm" />
+		<Unit filename="icon5.xpm" />
+		<Unit filename="state1.xpm" />
+		<Unit filename="state2.xpm" />
+		<Unit filename="state3.xpm" />
+		<Unit filename="state4.xpm" />
+		<Unit filename="state5.xpm" />
+		<Unit filename="treetest.cpp" />
+		<Unit filename="treetest.h" />
+		<Unit filename="unchecked.xpm" />
 		<Extensions>
 			<code_completion />
 			<envvars />

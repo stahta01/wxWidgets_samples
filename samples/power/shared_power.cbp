@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="dll_keyboard" />
+		<Option title="shared_power" />
 		<Option execution_dir="." />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
@@ -69,7 +69,7 @@
 		<Compiler>
 			<Add option="-DWXUSINGDLL" />
 		</Compiler>
-		<Unit filename="keyboard.cpp" />
+		<Unit filename="power.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
