@@ -5,7 +5,7 @@
 		<Option title="shared_opengl_cube" />
 		<Option execution_dir="." />
 		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="null" />
 		<Build>
 			<Target title="win_gcc">
 				<Option output="bin/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
@@ -69,7 +69,8 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="win_gcc;" />
+			<Add alias="All" targets="win_gcc;msys2_wx30_gcc;msys2_wx31_gcc;" />
+			<Add alias="MSys2" targets="msys2_wx30_gcc;msys2_wx31_gcc;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />

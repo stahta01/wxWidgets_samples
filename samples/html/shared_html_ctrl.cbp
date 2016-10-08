@@ -65,7 +65,8 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="win_gcc;" />
+			<Add alias="All" targets="win_gcc;msys2_wx30_gcc;msys2_wx31_gcc;" />
+			<Add alias="MSys2" targets="msys2_wx30_gcc;msys2_wx31_gcc;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-DWXUSINGDLL" />
