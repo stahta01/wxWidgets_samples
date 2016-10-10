@@ -49,7 +49,6 @@
 		<Project filename="joytest/dll_joytest.cbp" />
 		<Project filename="layout/dll_layout.cbp" />
 		<Project filename="mdi/dll_mdi.cbp" />
-		<Project filename="mediaplayer/dll_mediaplayer.cbp" />
 		<Project filename="memcheck/dll_memcheck.cbp" />
 		<Project filename="menu/dll_menu.cbp" />
 		<Project filename="nativdlg/dll_nativdlg.cbp" />
@@ -73,7 +72,6 @@
 		<Project filename="sockets/dll_sockets_server.cbp" />
 		<Project filename="sockets/dll_sockets_server_base.cbp" />
 		<Project filename="sound/dll_sound.cbp" />
-		<Project filename="splash/dll_splash.cbp" />
 		<Project filename="splitter/dll_splitter.cbp" />
 		<Project filename="statbar/dll_statbar.cbp" />
 		<Project filename="stc/dll_stc.cbp" />
@@ -90,6 +88,8 @@
 		<Project filename="webview/dll_webview.cbp" />
 		<Project filename="wizard/dll_wizard.cbp" />
 		<Project filename="wrapsizer/dll_wrapsizer.cbp" />
+		<Project filename="mediaplayer/dll_mediaplayer.cbp" />
+		<Project filename="splash/dll_splash.cbp" />
 		<Project filename="font/shared_font.cbp" />
 		<Project filename="image/shared_image.cbp" />
 		<Project filename="keyboard/shared_keyboard.cbp" />
